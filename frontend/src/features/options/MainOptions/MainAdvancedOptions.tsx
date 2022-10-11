@@ -20,7 +20,7 @@ export default function MainAdvancedOptions() {
         onChange={handleShowAdvancedOptions}
         checked={showAdvancedOptions}
       />
-      <label htmlFor="advanced_options">Advanced Options</label>
+      <label htmlFor="advanced_options">高级设置</label>
     </div>
   );
 }

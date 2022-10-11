@@ -2,7 +2,6 @@
 
 .settings-modal {
   background-color: var(--settings-modal-bg) !important;
-  font-family: Inter;
 
   .settings-modal-content {
     display: grid;
@@ -33,10 +32,8 @@
     row-gap: 1rem;
 
     button {
-      @include Button(
-        $btn-color: var(--btn-red),
-        $btn-color-hover: var(--btn-red-hover)
-      );
+      @include Button($btn-color: var(--btn-red),
+        $btn-color-hover: var(--btn-red-hover));
     }
   }
 }

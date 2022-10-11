@@ -27,7 +27,7 @@ export default function ImageToImagePanel() {
     seed: {
       header: (
         <Box flex="1" textAlign="left">
-          Seed
+          种子
         </Box>
       ),
       feature: Feature.SEED,
@@ -38,11 +38,13 @@ export default function ImageToImagePanel() {
       feature: Feature.VARIATIONS,
       options: <VariationsOptions />,
     },
+    /*
     face_restore: {
       header: <FaceRestore />,
       feature: Feature.FACE_CORRECTION,
       options: <FaceRestoreOptions />,
     },
+    */
     upscale: {
       header: <Upscale />,
       feature: Feature.UPSCALE,
@@ -51,7 +53,7 @@ export default function ImageToImagePanel() {
     other: {
       header: (
         <Box flex="1" textAlign="left">
-          Other
+          其他
         </Box>
       ),
       feature: Feature.OTHER,
@@ -65,7 +67,7 @@ export default function ImageToImagePanel() {
       <ProcessButtons />
       <MainOptions />
       <ImageToImageStrength
-        label="Image To Image Strength"
+        label="画图限制强度（越高则越相似，但越限制AI发挥）"
         styleClass="main-option-block image-to-image-strength-main-option"
       />
       <ImageFit />

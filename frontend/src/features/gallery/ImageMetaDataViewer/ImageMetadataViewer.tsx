@@ -278,9 +278,8 @@ const ImageMetadataViewer = memo(
                             gap={1}
                             direction={'column'}
                           >
-                            <Text size={'md'}>{`${
-                              i + 1
-                            }: Upscale (ESRGAN)`}</Text>
+                            <Text size={'md'}>{`${i + 1
+                              }: Upscale (ESRGAN)`}</Text>
                             <MetadataItem
                               label="Scale"
                               value={scale}
@@ -304,9 +303,8 @@ const ImageMetadataViewer = memo(
                             gap={1}
                             direction={'column'}
                           >
-                            <Text size={'md'}>{`${
-                              i + 1
-                            }: Face restoration (GFPGAN)`}</Text>
+                            <Text size={'md'}>{`${i + 1
+                              }: Face restoration (GFPGAN)`}</Text>
 
                             <MetadataItem
                               label="Strength"
@@ -322,6 +320,8 @@ const ImageMetadataViewer = memo(
                   )}
                 </>
               )}
+
+              {/** 
               <Flex gap={2} direction={'column'}>
                 <Flex gap={2}>
                   <Tooltip label={`Copy metadata JSON`}>
@@ -342,6 +342,7 @@ const ImageMetadataViewer = memo(
                   <pre>{metadataJSON}</pre>
                 </div>
               </Flex>
+              */}
             </>
           ) : (
             <Center width={'100%'} pt={10}>

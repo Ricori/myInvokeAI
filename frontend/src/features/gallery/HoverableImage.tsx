@@ -100,7 +100,7 @@ const HoverableImage = memo((props: HoverableImageProps) => {
             </DeleteImageModal>
           </Tooltip>
           {['txt2img', 'img2img'].includes(image?.metadata?.image?.type) && (
-            <Tooltip label="Use All Parameters" hasArrow>
+            <Tooltip label="使用相同设置" hasArrow>
               <IconButton
                 aria-label="Use All Parameters"
                 icon={<IoArrowUndoCircleOutline />}
@@ -112,7 +112,7 @@ const HoverableImage = memo((props: HoverableImageProps) => {
             </Tooltip>
           )}
           {image?.metadata?.image?.seed !== undefined && (
-            <Tooltip label="Use Seed" hasArrow>
+            <Tooltip label="使用相同种子" hasArrow>
               <IconButton
                 aria-label="Use Seed"
                 icon={<FaSeedling />}
@@ -123,7 +123,7 @@ const HoverableImage = memo((props: HoverableImageProps) => {
               />
             </Tooltip>
           )}
-          <Tooltip label="Send To Image To Image" hasArrow>
+          <Tooltip label="发送到以图画图" hasArrow>
             <IconButton
               aria-label="Send To Image To Image"
               icon={<FaImage />}

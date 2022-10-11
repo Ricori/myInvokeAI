@@ -1,7 +1,6 @@
 // General Imports
 @use 'Colors_Dark';
 @use 'Colors_Light';
-@use 'Fonts';
 @use 'Animations';
 
 // Component Styles
@@ -12,7 +11,6 @@
 @use '../features/system/SiteHeader.scss';
 @use '../features/system/StatusIndicator.scss';
 @use '../features/system/SettingsModal/SettingsModal.scss';
-@use '../features/system/HotkeysModal/HotkeysModal.scss';
 @use '../features/system/Console.scss';
 
 // options
@@ -63,5 +61,5 @@ body {
 #root {
   background-color: var(--root-bg-color);
   color: var(--text-color);
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-family: Helvetica, sans-serif;
 }

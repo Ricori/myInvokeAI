@@ -14,7 +14,7 @@ export default function MainIterations() {
 
   return (
     <IAINumberInput
-      label="Images"
+      label="图片数量"
       step={1}
       min={1}
       max={9999}

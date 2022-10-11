@@ -62,7 +62,7 @@ export default function ImageToImageDisplay() {
       ) : (
         <div className="upload-image">
           <InvokeImageUploader
-            label="Upload or Drop Image Here"
+            label="点击上传或者拖动图片到这里"
             icon={<FaUpload />}
             styleClass="image-to-image-upload-btn"
             dispatcher={uploadInitialImage}

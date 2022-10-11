@@ -24,7 +24,7 @@ export default function ShuffleSeed() {
       isDisabled={shouldRandomizeSeed}
       onClick={handleClickRandomizeSeed}
     >
-      <p>Shuffle</p>
+      <p>随机一个</p>
     </Button>
   );
 }

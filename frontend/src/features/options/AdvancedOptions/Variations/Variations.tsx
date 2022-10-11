@@ -10,7 +10,7 @@ export default function Variations() {
       width={'100%'}
       mr={2}
     >
-      <p>Variations</p>
+      <p>变体</p>
       <GenerateVariations />
     </Flex>
   );

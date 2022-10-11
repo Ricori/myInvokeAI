@@ -14,7 +14,7 @@ export default function MainHeight() {
 
   return (
     <IAISelect
-      label="Height"
+      label="图片高度"
       value={height}
       flexGrow={1}
       onChange={handleChangeHeight}

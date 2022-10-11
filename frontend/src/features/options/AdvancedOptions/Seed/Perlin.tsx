@@ -15,7 +15,7 @@ export default function Perlin() {
 
   return (
     <IAINumberInput
-      label="Perlin Noise"
+      label="柏林噪声"
       min={0}
       max={1}
       step={0.05}

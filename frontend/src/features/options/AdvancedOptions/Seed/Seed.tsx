@@ -23,7 +23,7 @@ export default function Seed() {
 
   return (
     <IAINumberInput
-      label="Seed"
+      label="种子"
       step={1}
       precision={0}
       flexGrow={1}

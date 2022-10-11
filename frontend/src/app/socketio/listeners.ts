@@ -45,7 +45,7 @@ const makeSocketIOListeners = (
     onConnect: () => {
       try {
         dispatch(setIsConnected(true));
-        dispatch(setCurrentStatus('Connected'));
+        dispatch(setCurrentStatus('已连接Yoru AI服务器'));
         if (getState().gallery.latest_mtime) {
           dispatch(requestNewImages());
         } else {
@@ -61,7 +61,7 @@ const makeSocketIOListeners = (
     onDisconnect: () => {
       try {
         dispatch(setIsConnected(false));
-        dispatch(setCurrentStatus('Disconnected'));
+        dispatch(setCurrentStatus('与Yoru AI服务器断开'));
 
         dispatch(
           addLogEntry({

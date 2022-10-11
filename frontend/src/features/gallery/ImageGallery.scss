@@ -7,13 +7,11 @@
     right: 1rem;
     border-radius: 0.5rem 0 0 0.5rem;
     padding: 0 0.5rem;
-    @include Button(
-      $btn-width: 1rem,
+    @include Button($btn-width: 1rem,
       $btn-height: 6rem,
       $icon-size: 20px,
       $btn-color: var(--btn-grey),
-      $btn-color-hover: var(--btn-grey-hover)
-    );
+      $btn-color-hover: var(--btn-grey-hover));
   }
 }
 
@@ -41,6 +39,7 @@
 
 .image-gallery-close-btn {
   background-color: var(--btn-load-more) !important;
+
   &:hover {
     background-color: var(--btn-load-more-hover) !important;
   }
@@ -56,19 +55,24 @@
 }
 
 .masonry-grid {
-  display: -webkit-box; /* Not needed if autoprefixing */
-  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: -webkit-box;
+  /* Not needed if autoprefixing */
+  display: -ms-flexbox;
+  /* Not needed if autoprefixing */
   display: flex;
-  margin-left: 0.5rem; /* gutter size offset */
+  margin-left: 0.5rem;
+  /* gutter size offset */
   width: auto;
 }
+
 .masonry-grid_column {
-  padding-left: 0.5rem; /* gutter size */
+  padding-left: 0.5rem;
+  /* gutter size */
   background-clip: padding-box;
 }
 
 /* Style your items */
-.masonry-grid_column > .hoverable-image {
+.masonry-grid_column>.hoverable-image {
   /* change div to reference your elements you put in <Masonry> */
   background: var(--tab-color);
   margin-bottom: 0.5rem;
@@ -84,7 +88,6 @@
 .image-gallery-load-more-btn {
   background-color: var(--btn-load-more) !important;
   font-size: 0.85rem !important;
-  font-family: Inter;
 
   &:disabled {
     &:hover {
@@ -99,14 +102,13 @@
 
 .image-gallery-container-placeholder {
   display: flex;
-  background-color: var(--background-color-secondary);
+  // background-color: var(--background-color-secondary);
   border-radius: 0.5rem;
   place-items: center;
   padding: 2rem 0;
 
   p {
     color: var(--subtext-color-bright);
-    font-family: Inter;
   }
 
   svg {

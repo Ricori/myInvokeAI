@@ -8,6 +8,7 @@
   overflow: scroll;
   max-height: $app-metadata-height;
   z-index: 10;
+  overflow: hidden;
 }
 
 .image-json-viewer {

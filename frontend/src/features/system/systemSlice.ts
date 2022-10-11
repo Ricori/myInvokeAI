@@ -17,7 +17,7 @@ export interface Log {
 
 export interface SystemState
   extends InvokeAI.SystemStatus,
-    InvokeAI.SystemConfig {
+  InvokeAI.SystemConfig {
   shouldDisplayInProgress: boolean;
   log: Array<LogEntry>;
   shouldShowLogViewer: boolean;
@@ -43,7 +43,7 @@ const initialSystemState = {
   log: [],
   shouldShowLogViewer: false,
   shouldDisplayInProgress: false,
-  shouldDisplayGuides: true,
+  shouldDisplayGuides: false,
   isGFPGANAvailable: true,
   isESRGANAvailable: true,
   socketId: '',
@@ -53,7 +53,7 @@ const initialSystemState = {
   totalSteps: 0,
   currentIteration: 0,
   totalIterations: 0,
-  currentStatus: 'Disconnected',
+  currentStatus: '未连接到Yoru AI服务器',
   currentStatusHasSteps: false,
   model: '',
   model_id: '',
@@ -90,13 +90,13 @@ export const systemSlice = createSlice({
       state.currentIteration = 0;
       state.totalIterations = 0;
       state.currentStatusHasSteps = false;
-      state.currentStatus = 'Server error';
+      state.currentStatus = 'Yoru AI服务器错误';
       state.wasErrorSeen = false;
     },
     errorSeen: (state) => {
       state.hasError = false;
       state.wasErrorSeen = true;
-      state.currentStatus = state.isConnected ? 'Connected' : 'Disconnected';
+      state.currentStatus = state.isConnected ? '已连接Yoru AI服务器' : '未连接到Yoru AI服务器';
     },
     addLogEntry: (
       state,
@@ -152,7 +152,7 @@ export const systemSlice = createSlice({
       state.currentIteration = 0;
       state.totalIterations = 0;
       state.currentStatusHasSteps = false;
-      state.currentStatus = 'Processing canceled';
+      state.currentStatus = '任务取消惹';
     },
   },
 });

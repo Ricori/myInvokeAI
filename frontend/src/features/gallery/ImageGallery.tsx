@@ -2,7 +2,7 @@ import { Button, IconButton } from '@chakra-ui/button';
 import { Resizable } from 're-resizable';
 
 import React, { useState } from 'react';
-import { useHotkeys } from 'react-hotkeys-hook';
+
 import { MdClear, MdPhotoLibrary } from 'react-icons/md';
 import Masonry from 'react-masonry-css';
 import { requestImages } from '../../app/socketio/actions';
@@ -45,35 +45,12 @@ export default function ImageGallery() {
     dispatch(requestImages());
   };
 
-  useHotkeys(
-    'g',
-    () => {
-      handleShowGalleryToggle();
-    },
-    [shouldShowGallery]
-  );
-
-  useHotkeys(
-    'left',
-    () => {
-      dispatch(selectPrevImage());
-    },
-    []
-  );
-
-  useHotkeys(
-    'right',
-    () => {
-      dispatch(selectNextImage());
-    },
-    []
-  );
 
   return (
     <div className="image-gallery-area">
       {!shouldShowGallery && (
         <IAIIconButton
-          tooltip="Show Gallery"
+          tooltip="打开画廊"
           tooltipPlacement="top"
           aria-label="Show Gallery"
           onClick={handleShowGalleryToggle}
@@ -93,7 +70,7 @@ export default function ImageGallery() {
         >
           {/* <div className="image-gallery-popup"></div> */}
           <div className="image-gallery-header">
-            <h1>Your Invocations</h1>
+            <h1>你的作品</h1>
             <IconButton
               size={'sm'}
               aria-label={'Close Gallery'}
@@ -126,7 +103,7 @@ export default function ImageGallery() {
             ) : (
               <div className="image-gallery-container-placeholder">
                 <MdPhotoLibrary />
-                <p>No Images In Gallery</p>
+                <p>还没有画呢ヽ(≧Д≦)ノ</p>
               </div>
             )}
             <Button
@@ -134,7 +111,7 @@ export default function ImageGallery() {
               isDisabled={!areMoreImagesAvailable}
               className="image-gallery-load-more-btn"
             >
-              {areMoreImagesAvailable ? 'Load More' : 'All Images Loaded'}
+              {areMoreImagesAvailable ? '加载更多' : '全部加载完啦 o(*≧▽≦)ツ'}
             </Button>
           </div>
         </Resizable>

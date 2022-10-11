@@ -41,10 +41,10 @@ export interface OptionsState {
 const initialOptionsState: OptionsState = {
   prompt: '',
   iterations: 1,
-  steps: 50,
-  cfgScale: 7.5,
+  steps: 45,
+  cfgScale: 7,
   height: 512,
-  width: 512,
+  width: 768,
   sampler: 'k_lms',
   threshold: 0,
   perlin: 0,
@@ -254,7 +254,7 @@ export const optionsSlice = createSlice({
       if (threshold) state.threshold = threshold;
       if (typeof threshold === 'undefined') state.threshold = 0;
       if (perlin) state.perlin = perlin;
-      if (typeof perlin === 'undefined') state.perlin = 0;      
+      if (typeof perlin === 'undefined') state.perlin = 0;
       if (typeof seamless === 'boolean') state.seamless = seamless;
       if (width) state.width = width;
       if (height) state.height = height;

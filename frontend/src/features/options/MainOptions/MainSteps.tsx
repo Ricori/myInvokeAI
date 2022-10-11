@@ -12,7 +12,7 @@ export default function MainSteps() {
 
   return (
     <IAINumberInput
-      label="Steps"
+      label="检查点(Steps)"
       min={1}
       max={9999}
       step={1}

@@ -27,7 +27,7 @@ export default function Upscale() {
       width={'100%'}
       mr={2}
     >
-      <p>Upscale</p>
+      <p>超分辨率（请勿滥用）</p>
       <IAISwitch
         isDisabled={!isESRGANAvailable}
         isChecked={shouldRunESRGAN}

@@ -14,7 +14,7 @@ export default function InvokeButton() {
 
   return (
     <IAIButton
-      label="Invoke"
+      label="来吧"
       aria-label="Invoke"
       type="submit"
       isDisabled={!isReady}

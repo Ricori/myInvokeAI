@@ -7,7 +7,6 @@ import { FaAngleDoubleDown, FaCode, FaMinus } from 'react-icons/fa';
 import { createSelector } from '@reduxjs/toolkit';
 import { isEqual } from 'lodash';
 import { Resizable } from 're-resizable';
-import { useHotkeys } from 'react-hotkeys-hook';
 
 const logSelector = createSelector(
   (state: RootState) => state.system,
@@ -67,14 +66,6 @@ const Console = () => {
     dispatch(setShouldShowLogViewer(!shouldShowLogViewer));
   };
 
-  useHotkeys(
-    '`',
-    () => {
-      dispatch(setShouldShowLogViewer(!shouldShowLogViewer));
-    },
-    [shouldShowLogViewer]
-  );
-
   return (
     <>
       {shouldShowLogViewer && (
@@ -102,9 +93,8 @@ const Console = () => {
       {shouldShowLogViewer && (
         <Tooltip hasArrow label={shouldAutoscroll ? 'Autoscroll On' : 'Autoscroll Off'}>
           <IconButton
-            className={`console-autoscroll-icon-button ${
-              shouldAutoscroll && 'autoscroll-enabled'
-            }`}
+            className={`console-autoscroll-icon-button ${shouldAutoscroll && 'autoscroll-enabled'
+              }`}
             size="sm"
             aria-label="Toggle autoscroll"
             variant={'solid'}
@@ -113,20 +103,17 @@ const Console = () => {
           />
         </Tooltip>
       )}
-      <Tooltip hasArrow label={shouldShowLogViewer ? 'Hide Console' : 'Show Console'}>
-        <IconButton
-          className={`console-toggle-icon-button ${
-            (hasError || !wasErrorSeen) && 'error-seen'
+      <IconButton
+        className={`console-toggle-icon-button ${(hasError || !wasErrorSeen) && 'error-seen'
           }`}
-          size="sm"
-          position={'fixed'}
-          variant={'solid'}
-          aria-label="Toggle Log Viewer"
-          // colorScheme={hasError || !wasErrorSeen ? 'red' : 'gray'}
-          icon={shouldShowLogViewer ? <FaMinus /> : <FaCode />}
-          onClick={handleClickLogViewerToggle}
-        />
-      </Tooltip>
+        size="sm"
+        position={'fixed'}
+        variant={'solid'}
+        aria-label="Toggle Log Viewer"
+        // colorScheme={hasError || !wasErrorSeen ? 'red' : 'gray'}
+        icon={shouldShowLogViewer ? <FaMinus /> : <FaCode />}
+        onClick={handleClickLogViewerToggle}
+      />
     </>
   );
 };

@@ -14,7 +14,7 @@ export default function MainWidth() {
 
   return (
     <IAISelect
-      label="Width"
+      label="图片宽度"
       value={width}
       flexGrow={1}
       onChange={handleChangeWidth}

@@ -20,7 +20,7 @@ export default function RandomizeSeed() {
 
   return (
     <IAISwitch
-      label="Randomize Seed"
+      label="随机种子"
       isChecked={shouldRandomizeSeed}
       onChange={handleChangeShouldRandomizeSeed}
     />

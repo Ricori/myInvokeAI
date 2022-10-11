@@ -27,7 +27,6 @@ import { deleteImage } from '../../app/socketio/actions';
 import { RootState } from '../../app/store';
 import { setShouldConfirmOnDelete, SystemState } from '../system/systemSlice';
 import * as InvokeAI from '../../app/invokeai';
-import { useHotkeys } from 'react-hotkeys-hook';
 
 interface DeleteImageModalProps {
   /**
@@ -68,14 +67,6 @@ const DeleteImageModal = forwardRef(
       onClose();
     };
 
-    useHotkeys(
-      'del',
-      () => {
-        shouldConfirmOnDelete ? onOpen() : handleDelete();
-      },
-      [image, shouldConfirmOnDelete]
-    );
-
     const handleChangeShouldConfirmOnDelete = (
       e: ChangeEvent<HTMLInputElement>
     ) => dispatch(setShouldConfirmOnDelete(!e.target.checked));
@@ -96,17 +87,17 @@ const DeleteImageModal = forwardRef(
           <AlertDialogOverlay>
             <AlertDialogContent>
               <AlertDialogHeader fontSize="lg" fontWeight="bold">
-                Delete image
+                删除图片
               </AlertDialogHeader>
 
               <AlertDialogBody>
                 <Flex direction={'column'} gap={5}>
                   <Text>
-                    Are you sure? You can't undo this action afterwards.
+                    你确定吗？该操作可无法恢复哦
                   </Text>
                   <FormControl>
                     <Flex alignItems={'center'}>
-                      <FormLabel mb={0}>Don't ask me again</FormLabel>
+                      <FormLabel mb={0}>别再烦我了</FormLabel>
                       <Switch
                         checked={!shouldConfirmOnDelete}
                         onChange={handleChangeShouldConfirmOnDelete}
@@ -117,10 +108,10 @@ const DeleteImageModal = forwardRef(
               </AlertDialogBody>
               <AlertDialogFooter>
                 <Button ref={cancelRef} onClick={onClose}>
-                  Cancel
+                  取消
                 </Button>
                 <Button colorScheme="red" onClick={handleDelete} ml={3}>
-                  Delete
+                  删除
                 </Button>
               </AlertDialogFooter>
             </AlertDialogContent>

@@ -9,7 +9,6 @@ import { isEqual } from 'lodash';
 import useCheckParameters, {
   systemSelector,
 } from '../../../common/hooks/useCheckParameters';
-import { useHotkeys } from 'react-hotkeys-hook';
 
 export const optionsSelector = createSelector(
   (state: RootState) => state.options,
@@ -39,23 +38,6 @@ const PromptInput = () => {
     dispatch(setPrompt(e.target.value));
   };
 
-  useHotkeys(
-    'ctrl+enter',
-    () => {
-      if (isReady) {
-        dispatch(generateImage());
-      }
-    },
-    [isReady]
-  );
-
-  useHotkeys(
-    'alt+a',
-    () => {
-      promptRef.current?.focus();
-    },
-    []
-  );
 
   const handleKeyDown = (e: KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === 'Enter' && e.shiftKey === false && isReady) {
@@ -73,7 +55,7 @@ const PromptInput = () => {
         <Textarea
           id="prompt"
           name="prompt"
-          placeholder="I'm dreaming of..."
+          placeholder="我在想些什么？（只能用英文关键词哦）"
           size={'lg'}
           value={prompt}
           onChange={handleChangePrompt}

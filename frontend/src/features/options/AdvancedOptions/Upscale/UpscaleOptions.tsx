@@ -63,14 +63,14 @@ const UpscaleOptions = () => {
     <div className='upscale-options'>
       <IAISelect
         isDisabled={!isESRGANAvailable}
-        label="Scale"
+        label="超分倍数"
         value={upscalingLevel}
         onChange={handleChangeLevel}
         validValues={UPSCALING_LEVELS}
       />
       <IAINumberInput
         isDisabled={!isESRGANAvailable}
-        label="Strength"
+        label="强度"
         step={0.05}
         min={0}
         max={1}

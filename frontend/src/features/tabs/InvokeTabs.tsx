@@ -1,7 +1,7 @@
 import { Tab, TabPanel, TabPanels, Tabs, Tooltip } from '@chakra-ui/react';
 import _ from 'lodash';
 import React, { ReactElement } from 'react';
-import { useHotkeys } from 'react-hotkeys-hook';
+
 import { RootState, useAppDispatch, useAppSelector } from '../../app/store';
 import InpaintingWIP from '../../common/components/WorkInProgress/InpaintingWIP';
 import NodesWIP from '../../common/components/WorkInProgress/NodesWIP';
@@ -21,22 +21,23 @@ export const tab_dict = {
   txt2img: {
     title: <TextToImageIcon fill={'black'} boxSize={'2.5rem'} />,
     panel: <TextToImage />,
-    tooltip: 'Text To Image',
+    tooltip: '以文字画图',
   },
   img2img: {
     title: <ImageToImageIcon fill={'black'} boxSize={'2.5rem'} />,
     panel: <ImageToImage />,
-    tooltip: 'Image To Image',
+    tooltip: '以图片画图',
   },
+  /*
   inpainting: {
     title: <InpaintIcon fill={'black'} boxSize={'2.5rem'} />,
     panel: <InpaintingWIP />,
-    tooltip: 'Inpainting',
+    tooltip: '图像修复',
   },
   outpainting: {
     title: <OutpaintIcon fill={'black'} boxSize={'2.5rem'} />,
     panel: <OutpaintingWIP />,
-    tooltip: 'Outpainting',
+    tooltip: '图片扩展',
   },
   nodes: {
     title: <NodesIcon fill={'black'} boxSize={'2.5rem'} />,
@@ -48,6 +49,7 @@ export const tab_dict = {
     panel: <PostProcessingWIP />,
     tooltip: 'Post Processing',
   },
+  */
 };
 
 export const tabMap = _.map(tab_dict, (tab, key) => key);
@@ -57,30 +59,6 @@ export default function InvokeTabs() {
     (state: RootState) => state.options.activeTab
   );
   const dispatch = useAppDispatch();
-
-  useHotkeys('1', () => {
-    dispatch(setActiveTab(0));
-  });
-
-  useHotkeys('2', () => {
-    dispatch(setActiveTab(1));
-  });
-
-  useHotkeys('3', () => {
-    dispatch(setActiveTab(2));
-  });
-
-  useHotkeys('4', () => {
-    dispatch(setActiveTab(3));
-  });
-
-  useHotkeys('5', () => {
-    dispatch(setActiveTab(4));
-  });
-
-  useHotkeys('6', () => {
-    dispatch(setActiveTab(5));
-  });
 
   const renderTabs = () => {
     const tabsToRender: ReactElement[] = [];

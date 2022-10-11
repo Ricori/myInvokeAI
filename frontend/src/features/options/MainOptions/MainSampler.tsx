@@ -14,7 +14,7 @@ export default function MainSampler() {
 
   return (
     <IAISelect
-      label="Sampler"
+      label="采样器"
       value={sampler}
       onChange={handleChangeSampler}
       validValues={SAMPLERS}

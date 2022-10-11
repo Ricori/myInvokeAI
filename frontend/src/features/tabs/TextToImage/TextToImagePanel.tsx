@@ -27,7 +27,7 @@ export default function TextToImagePanel() {
     seed: {
       header: (
         <Box flex="1" textAlign="left">
-          Seed
+          种子
         </Box>
       ),
       feature: Feature.SEED,
@@ -38,11 +38,13 @@ export default function TextToImagePanel() {
       feature: Feature.VARIATIONS,
       options: <VariationsOptions />,
     },
+    /*
     face_restore: {
       header: <FaceRestore />,
       feature: Feature.FACE_CORRECTION,
       options: <FaceRestoreOptions />,
     },
+    */
     upscale: {
       header: <Upscale />,
       feature: Feature.UPSCALE,
@@ -56,7 +58,7 @@ export default function TextToImagePanel() {
     other: {
       header: (
         <Box flex="1" textAlign="left">
-          Other
+          其他
         </Box>
       ),
       feature: Feature.OTHER,

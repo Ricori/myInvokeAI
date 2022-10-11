@@ -12,7 +12,7 @@ export default function MainCFGScale() {
 
   return (
     <IAINumberInput
-      label="CFG Scale"
+      label="系数(CFG Scale)"
       step={0.5}
       min={1}
       max={30}

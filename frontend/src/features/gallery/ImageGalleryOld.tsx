@@ -8,7 +8,7 @@ import {
   useDisclosure,
 } from '@chakra-ui/react';
 import React from 'react';
-import { useHotkeys } from 'react-hotkeys-hook';
+
 import { MdPhotoLibrary } from 'react-icons/md';
 import { requestImages } from '../../app/socketio/actions';
 import { RootState, useAppDispatch } from '../../app/store';
@@ -39,33 +39,6 @@ const ImageGalleryOld = () => {
     dispatch(requestImages());
   };
 
-  useHotkeys(
-    'g',
-    () => {
-      if (isOpen) {
-        onClose();
-      } else {
-        onOpen();
-      }
-    },
-    [isOpen]
-  );
-
-  useHotkeys(
-    'left',
-    () => {
-      dispatch(selectPrevImage());
-    },
-    []
-  );
-
-  useHotkeys(
-    'right',
-    () => {
-      dispatch(selectNextImage());
-    },
-    []
-  );
 
   return (
     <div className="image-gallery-area">

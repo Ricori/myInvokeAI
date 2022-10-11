@@ -46,11 +46,11 @@ const StatusIndicator = () => {
   let statusMessage = currentStatus;
 
   const intermediateStatuses = [
-    'generating',
-    'preparing',
-    'saving image',
+    '生成中..',
+    '准备中..',
+    '正在保存图片..',
     'restoring faces',
-    'upscaling',
+    '超分辨率重..',
   ];
 
   if (intermediateStatuses.includes(statusMessage.toLowerCase())) {
@@ -84,7 +84,7 @@ const StatusIndicator = () => {
         cursor={statusIndicatorCursor}
         onClick={handleClickStatusIndicator}
         className={`status ${statusStyle}`}
-        // textColor={statusMessageTextColor}
+      // textColor={statusMessageTextColor}
       >
         {statusMessage}
       </Text>

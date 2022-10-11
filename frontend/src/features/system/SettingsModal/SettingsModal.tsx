@@ -94,49 +94,40 @@ const SettingsModal = ({ children }: SettingsModalProps) => {
       <Modal isOpen={isSettingsModalOpen} onClose={onSettingsModalClose}>
         <ModalOverlay />
         <ModalContent className="settings-modal">
-          <ModalHeader className="settings-modal-header">Settings</ModalHeader>
+          <ModalHeader className="settings-modal-header">设置</ModalHeader>
           <ModalCloseButton />
           <ModalBody className="settings-modal-content">
             <div className="settings-modal-items">
               <SettingsModalItem
-                settingTitle="Display In-Progress Images (slower)"
+                settingTitle="显示正在生成的图像 (不建议)"
                 isChecked={shouldDisplayInProgress}
                 dispatcher={setShouldDisplayInProgress}
               />
 
               <SettingsModalItem
-                settingTitle="Confirm on Delete"
+                settingTitle="删除图像需要确认"
                 isChecked={shouldConfirmOnDelete}
                 dispatcher={setShouldConfirmOnDelete}
               />
 
               <SettingsModalItem
-                settingTitle="Display Help Icons"
+                settingTitle="在配置项旁边显示该项的帮助"
                 isChecked={shouldDisplayGuides}
                 dispatcher={setShouldDisplayGuides}
               />
             </div>
 
             <div className="settings-modal-reset">
-              <Heading size={'md'}>Reset Web UI</Heading>
-              <Text>
-                Resetting the web UI only resets the browser's local cache of
-                your images and remembered settings. It does not delete any
-                images from disk.
-              </Text>
-              <Text>
-                If images aren't showing up in the gallery or something else
-                isn't working, please try resetting before submitting an issue
-                on GitHub.
-              </Text>
+              <Heading size={'md'}>清除缓存</Heading>
+
               <Button colorScheme="red" onClick={handleClickResetWebUI}>
-                Reset Web UI
+                清除缓存
               </Button>
             </div>
           </ModalBody>
 
           <ModalFooter>
-            <Button onClick={onSettingsModalClose}>Close</Button>
+            <Button onClick={onSettingsModalClose}>关闭</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
@@ -152,7 +143,7 @@ const SettingsModal = ({ children }: SettingsModalProps) => {
           <ModalBody pb={6} pt={6}>
             <Flex justifyContent={'center'}>
               <Text fontSize={'lg'}>
-                Web UI has been reset. Refresh the page to reload.
+                缓存已清除，请刷新页面。
               </Text>
             </Flex>
           </ModalBody>

@@ -19,7 +19,7 @@ const OutputOptions = () => {
   return (
     <Flex gap={2} direction={'column'}>
       <IAISwitch
-        label="Seamless tiling"
+        label="无缝拼接"
         fontSize={'md'}
         isChecked={seamless}
         onChange={handleChangeSeamless}
