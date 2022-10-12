@@ -1,5 +1,6 @@
 import {
   Box,
+  PlacementWithLogical,
   Popover,
   PopoverArrow,
   PopoverContent,
@@ -12,6 +13,7 @@ type PopoverProps = {
   title?: string;
   delay?: number;
   styleClass?: string;
+  placement?: PlacementWithLogical;
   popoverOptions?: ReactNode;
   actionButton?: ReactNode;
   children: ReactNode;
@@ -21,12 +23,13 @@ const InvokePopover = ({
   title = 'Popup',
   styleClass,
   delay = 50,
+  placement,
   popoverOptions,
   actionButton,
   children,
 }: PopoverProps) => {
   return (
-    <Popover trigger={'hover'} closeDelay={delay}>
+    <Popover trigger={'hover'} placement={placement} closeDelay={delay}>
       <PopoverTrigger>
         <Box>{children}</Box>
       </PopoverTrigger>

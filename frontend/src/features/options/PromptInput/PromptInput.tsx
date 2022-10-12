@@ -9,6 +9,8 @@ import { isEqual } from 'lodash';
 import useCheckParameters, {
   systemSelector,
 } from '../../../common/hooks/useCheckParameters';
+import InvokePopover from '../../gallery/InvokePopover';
+import AITagPanel from './AITagPanel';
 
 export const optionsSelector = createSelector(
   (state: RootState) => state.options,
@@ -48,23 +50,30 @@ const PromptInput = () => {
 
   return (
     <div className="prompt-bar">
-      <FormControl
-        isInvalid={prompt.length === 0 || Boolean(prompt.match(/^[\s\r\n]+$/))}
-        isDisabled={isProcessing}
+      <InvokePopover
+        title="关键词词典（测试版）"
+        styleClass="upscale-popover"
+        popoverOptions={<AITagPanel />}
+        placement="right"
       >
-        <Textarea
-          id="prompt"
-          name="prompt"
-          placeholder="我在想些什么？（只能用英文关键词哦）"
-          size={'lg'}
-          value={prompt}
-          onChange={handleChangePrompt}
-          onKeyDown={handleKeyDown}
-          resize="vertical"
-          height={30}
-          ref={promptRef}
-        />
-      </FormControl>
+        <FormControl
+          isInvalid={prompt.length === 0 || Boolean(prompt.match(/^[\s\r\n]+$/))}
+          isDisabled={isProcessing}
+        >
+          <Textarea
+            id="prompt"
+            name="prompt"
+            placeholder="我在想些什么？（只能用英文关键词哦）"
+            size={'lg'}
+            value={prompt}
+            onChange={handleChangePrompt}
+            onKeyDown={handleKeyDown}
+            resize="vertical"
+            height={30}
+            ref={promptRef}
+          />
+        </FormControl>
+      </InvokePopover>
     </div>
   );
 };

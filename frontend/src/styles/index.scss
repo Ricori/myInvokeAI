@@ -15,6 +15,7 @@
 
 // options
 @use '../features/options/PromptInput/PromptInput.scss';
+@use '../features/options/PromptInput/AITagPanel/index.scss';
 @use '../features/options/ProcessButtons/ProcessButtons.scss';
 @use '../features/options/MainOptions/MainOptions.scss';
 @use '../features/options/AccordionItems/AdvancedSettings.scss';
