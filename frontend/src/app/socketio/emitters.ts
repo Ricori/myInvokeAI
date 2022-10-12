@@ -26,6 +26,11 @@ const makeSocketIOEmitters = (
 
       const options = { ...getState().options };
 
+      if (options.prompt.indexOf('masterpiece,best quality,') === -1) {
+        // 增加高质量prompt
+        options.prompt = 'masterpiece,best quality,' + options.prompt;
+      }
+
       if (tabMap[options.activeTab] === 'txt2img') {
         options.shouldUseInitImage = false;
       }

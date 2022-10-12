@@ -780,7 +780,7 @@ class Generate:
         self.model_hash  = self._cached_sha256(weights,weight_bytes)
         pl_sd = torch.load(io.BytesIO(weight_bytes), map_location='cpu')
         del weight_bytes
-        sd    = pl_sd['state_dict']
+        sd    = pl_sd
         model = instantiate_from_config(c.model)
         m, u  = model.load_state_dict(sd, strict=False)
 
