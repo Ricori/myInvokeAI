@@ -201,3 +201,4 @@ models/ldm/stable-diffusion-v1/model.sha256
 gfpgan/
 
 models/ldm/stable-diffusion-v1/
+models/hypernetworks
