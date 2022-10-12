@@ -27,7 +27,7 @@ title: Linux
 3. Copy the InvokeAI source code from GitHub:
 
 ```
-(base) ~$ git clone https://github.com/invoke-ai/InvokeAI.git
+(base) ~$ git clone https://github.com/Ricori/yoruAI.git
 ```
 
 This will create InvokeAI folder where you will follow the rest of the steps.

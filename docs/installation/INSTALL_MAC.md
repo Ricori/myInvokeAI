@@ -70,7 +70,7 @@ curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -o M
 ##### END TWO DIFFERENT OPTIONS #####
 
 # Clone the Invoke AI repo
-git clone https://github.com/invoke-ai/InvokeAI.git
+git clone https://github.com/Ricori/yoruAI.git
 cd InvokeAI
 
 ### WAIT FOR THE CHECKPOINT FILE TO DOWNLOAD, THEN PROCEED ###

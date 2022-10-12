@@ -40,7 +40,7 @@ in the wiki
 4. Run the command:
 
     ```bash
-    git clone https://github.com/invoke-ai/InvokeAI.git
+    git clone https://github.com/Ricori/yoruAI.git
     ```
 
     This will create stable-diffusion folder where you will follow the rest of
