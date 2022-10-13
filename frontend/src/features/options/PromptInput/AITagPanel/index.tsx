@@ -32,6 +32,13 @@ const AITagPanel = () => {
 
   return (
     <div>
+      <div className="aiTag-tip">正向示例：ahoge,bangs,very_long_hair </div>
+      <div className="aiTag-tip">负向示例：[polar lowres,bad anatomy] </div>
+      <div className="aiTag-tip2">（使用中括号包裹负向词汇）</div>
+      <div className="aiTag-tip">关键词混合：silver_hair:0.25 white_hair:0.75 white_eyes</div>
+      <div className="aiTag-tip2">（25%的银发 + 75%的白发 + 白眼睛）</div>
+      <div className="aiTag-tip">你可以自由输入、组合你想要的元素，</div>
+      <div className="aiTag-tip">也可以点击下面按钮，快捷添加关键词</div>
       <IAIButton
         label={'点击打开关键词词典'}
         onClick={onOpen}

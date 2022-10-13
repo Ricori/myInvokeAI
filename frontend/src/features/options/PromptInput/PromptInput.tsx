@@ -51,7 +51,7 @@ const PromptInput = () => {
   return (
     <div className="prompt-bar">
       <InvokePopover
-        title="关键词词典（测试版）"
+        title="关键词"
         styleClass="upscale-popover"
         popoverOptions={<AITagPanel />}
         placement="right"

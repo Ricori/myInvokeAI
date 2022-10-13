@@ -1,4 +1,7 @@
-const PromptKeyArr = [
+export const qualityPrompts = 'masterpiece,best quality,';
+export const negativePrompts = ' [polar lowres,bad anatomy,bad hands,bad body,bad proportions,gross proportions,text,error,missing fingers,missing arms,missing legs,extra digit,,extra fingers,fewer digits,extra limbs,extra arms,extra legs,malformed limbs,fused fingers,too many fingers,long neck,cross-eyed,mutated hands,cropped,poorly drawn hands,poorly drawn face,mutation,deformed,worst quality,low quality,normal quality,jpeg artifacts,signature,watermark]';
+
+export const PromptKeyArr = [
   {
     "data": [
       {
@@ -8,6 +11,22 @@ const PromptKeyArr = [
       {
         "desc": "高质量:01",
         "name": "{best quality}, {{masterpiece}}, {highres}, original, extremely detailed 8K wallpaper, 1girl, {an extremely delicate and beautiful}"
+      },
+      {
+        "desc": "负向模板:简单",
+        "name": " [lowres,bad anatomy,bad hands, text, error, missing fingers,extra digit, fewer digits, cropped, worstquality, low quality, normal quality,jpegartifacts,signature, watermark, username,blurry,bad feet]",
+      },
+      {
+        "desc": "负向模板:手/身体相关",
+        "name": " [polar lowres,bad anatomy,bad hands,bad body,bad proportions,gross proportions,text,error,missing fingers,missing arms,missing legs,extra digit]",
+      },
+      {
+        "desc": "负向模板:多出肢体",
+        "name": " [extra fingers,fewer digits,extra limbs,extra arms,extra legs,malformed limbs,fused fingers,too many fingers,long neck,cross-eyed,mutated hands]",
+      },
+      {
+        "desc": "负向模板:裁剪/水印",
+        "name": " [cropped,poorly drawn hands,poorly drawn face,mutation,deformed,worst quality,low quality,normal quality,jpeg artifacts,signature,watermark]",
       }
     ],
     "sub": "模板"
@@ -2314,6 +2333,125 @@ const PromptKeyArr = [
     ],
     "sub": "NSFW"
   },
+  {
+    "data": [
+      {
+        "desc": "丑",
+        "name": "[ugly]",
+      },
+      {
+        "desc": "孕妇",
+        "name": "[pregnant]",
+      },
+      {
+        "desc": "丸吞",
+        "name": "[vore]",
+      },
+      {
+        "desc": "重复",
+        "name": "[duplicate]",
+      },
+      {
+        "desc": "病态",
+        "name": "[morbid]",
+      },
+      {
+        "desc": "残缺",
+        "name": "[mutilated]",
+      },
+      {
+        "desc": "变性",
+        "name": "[trannsexual]",
+      },
+      {
+        "desc": "双性",
+        "name": "[hermaphrodite]",
+      },
+      {
+        "desc": "多余的手指",
+        "name": "[extra fingers]",
+      },
+      {
+        "desc": "融合的手指",
+        "name": "[fused fingers]",
+      },
+      {
+        "desc": "太多的手指",
+        "name": "[too many fingers]",
+      },
+      {
+        "desc": "长脖子",
+        "name": "[long neck]",
+      },
+      {
+        "desc": "变异的手",
+        "name": "[mutated hands]",
+      },
+      {
+        "desc": "画得不好的手",
+        "name": "[poorly drawn hands]",
+      },
+      {
+        "desc": "画得不好的脸",
+        "name": "[poorly drawn face]",
+      },
+      {
+        "desc": "突变",
+        "name": "[mutation]",
+      },
+      {
+        "desc": "变形",
+        "name": "[deformed]",
+      },
+      {
+        "desc": "模糊",
+        "name": "[blurry]",
+      },
+      {
+        "desc": "坏解剖",
+        "name": "[bad anatomy]",
+      },
+      {
+        "desc": "坏比例",
+        "name": "[bad proportions]",
+      },
+      {
+        "desc": "畸形的四肢",
+        "name": "[malformed limbs]",
+      },
+      {
+        "desc": "额外四肢",
+        "name": "[extra limbs]",
+      },
+      {
+        "desc": "克隆脸",
+        "name": "[cloned face]",
+      },
+      {
+        "desc": "毁容",
+        "name": "[disfigured]",
+      },
+      {
+        "desc": "大体比例",
+        "name": "[gross proportions]",
+      },
+      {
+        "desc": "失踪的手臂",
+        "name": "[missing arms]",
+      },
+      {
+        "desc": "失踪的腿",
+        "name": "[missing legs]",
+      },
+      {
+        "desc": "多余的手臂",
+        "name": "[extra arms]",
+      },
+      {
+        "desc": "额外的腿",
+        "name": "[extra legs]",
+      },
+    ],
+    "sub": "负向关键词"
+  },
 ]
-
-export { PromptKeyArr };

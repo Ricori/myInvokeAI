@@ -2,12 +2,14 @@ import { AnyAction, Dispatch, MiddlewareAPI } from '@reduxjs/toolkit';
 import dateFormat from 'dateformat';
 import { Socket } from 'socket.io-client';
 import { frontendToBackendParameters } from '../../common/util/parameterTranslation';
+import { negativePrompts, qualityPrompts } from '../../const';
 import {
   addLogEntry,
   setIsProcessing,
 } from '../../features/system/systemSlice';
 import { tabMap, tab_dict } from '../../features/tabs/InvokeTabs';
 import * as InvokeAI from '../invokeai';
+
 
 /**
  * Returns an object containing all functions which use `socketio.emit()`.
@@ -26,9 +28,13 @@ const makeSocketIOEmitters = (
 
       const options = { ...getState().options };
 
-      if (options.prompt.indexOf('masterpiece,best quality,') === -1) {
+      if (options.prompt.indexOf(qualityPrompts) === -1) {
         // 增加高质量prompt
-        options.prompt = 'masterpiece,best quality,' + options.prompt;
+        options.prompt = qualityPrompts + options.prompt;
+      }
+      if (options.prompt.indexOf(negativePrompts) === -1) {
+        // 增加反向prompt
+        options.prompt = options.prompt + negativePrompts;
       }
 
       if (tabMap[options.activeTab] === 'txt2img') {
